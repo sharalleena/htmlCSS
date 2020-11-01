@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>expense tracker</title>
+    <link rel="stylesheet" href="xyz.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
+
+    <body>
+      <div class="abcd"><h2>DASHBORD</h2></div>
+        <center>
+      <div>
+          <a href="demo">
+            <button class="aa"> EXPENSE</button></a>
+      </div>      
+     <div>     
+                <a href="demo"></a>    
+                <button class="ab"><h6>TOTAL SPENDINGS<h6><br><h4>RM63.00</h4></h6></button></a>  
+             
+                <a href="demo">    
+                    <button class="ab"><h6>TODAY'S SPENDINGS<h6><br><h4>RM0.00</h4></h6></button></a>
+            
+      </div>
+      <div >
+        <a href="demo">
+            <br>
+            <button class="aa">YOUR BALANCE</button>
+            <center><button class="ac"><h4>RM63.00</h4></h6></button></a></div></center>
+       
+      </div>
+      <div>
+          <a href="demo">
+              <center><button class="ad">Fixed monthly commitments</button></center>
+          </a>
+          <br>
+      </div>
+      <div class="wrapper">
+        <div class="card">
+          <div class="circle">
+            <div class="bar"></div>
+            <div class="box"><span></span></div>
+          </div>
+          <div class="text">Balance</div>
+        </div>
+        <div class="card js">
+          <div class="circle">
+            <div class="bar"></div>
+            <div class="box"><span></span></div>
+          </div>
+          <div class="text">Savings</div>
+        </div>
+        <div class="card react">
+          <div class="circle">
+            <div class="bar"></div>
+            <div class="box"><span></span></div>
+          </div>
+          <div class="text">Daily Spendings</div>
+        </div>
+      </div>
+  
+      <script>
+        let options = {
+          startAngle: -1.55,
+          size: 150,
+          value: 0.85,
+          fill: {gradient: ['#a445b2', '#fa4299']}
+        }
+        $(".circle .bar").circleProgress(options).on('circle-animation-progress',
+        function(event, progress, stepValue){
+          $(this).parent().find("span").text(String(stepValue.toFixed(2).substr(2)) + "%");
+        });
+        $(".js .bar").circleProgress({
+          value: 0.70
+        });
+        $(".react .bar").circleProgress({
+          value: 0.60
+        });
+      </script>
+      <br>
+      <a href="demo">
+        <center><button class="aa">Your plannings</button></center>
+    </a>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <div class="bottom">
+        <nav class="nav">
+          
+          <a href="#" class="nav__link nav__link__active" target="demo">
+            <i class="material-icons nav__icon">dashboard</i>
+            <span class="nav__text">dashboard</span>
+          </a>
+          <a href="#" class="nav__link " target="demo">
+            <i class="material-icons nav__icon">person</i>
+            <span class="nav__text">person</span>
+          </a>
+         
+          <a href="#" class="nav__link" target="demo">
+            <i class="material-icons nav__icon">settings</i>
+            <span class="nav__text">settings</span>
+          </a>
+        </nav>
+      </div> 
+  
+
+    </body>
+</head>
+</html>
